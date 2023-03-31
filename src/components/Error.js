@@ -2,7 +2,7 @@ import { Typography,Box,Button } from "@mui/material";
 const Error = ()=> {
     return(
         <Box sx={{
-            height: '91vh',
+            height: '100vh',
             display:'flex',
             flexDirection:'column',
             alignItems:'center',

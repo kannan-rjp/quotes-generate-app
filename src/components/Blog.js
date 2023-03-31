@@ -30,7 +30,7 @@ const About = ()=> {
    },[])
  return(
    
-    <Grid container sx={{padding:2}} spacing={1}>
+    <Grid container sx={{padding:2,mt:6}} spacing={1}>
         <Grid item sm={12} lg={12}>
             <Paper elevation={3} sx={{backgroundColor:'primary.light'}}>
                <Box sx={{
@@ -39,7 +39,7 @@ const About = ()=> {
                   padding:3
                }}>
                   <Box>
-                     <Typography sx={{fontWeight:'bold',fontSize:20}} color='secondary'>Get Inspired in a Whole New Way with the Reality Quotes Image Generator</Typography>
+                     <Typography sx={{fontWeight:'bold',fontSize:20}} color='primary'>Get Inspired in a Whole New Way with the Reality Quotes Image Generator</Typography>
                   </Box>
                   
                </Box>

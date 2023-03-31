@@ -6,18 +6,20 @@ import { Button, CircularProgress, createTheme,ThemeProvider } from '@mui/materi
 import { useEffect,useState } from 'react';
 
 const ManinContent = () => {
-    const [quote, setQuote] = useState("");
-    const quoteGet = ()=> {
-        const url = 'https://quote-garden.onrender.com/api/v3/quotes/random';
-        fetch(url)
-        .then((response)=>response.json())
-        // .then((data)=>console.log(data))
-        .then((data)=>{
-            if(data?.data?.length>0){
-                setQuote(data.data[0])
-            }
-        })
-        .catch((err)=>console.log(err,'error message..'))
+    const [quote, setQuote] = useState([]);
+    async function quoteGet(){
+        try{
+            const response = await fetch(`https://quotable.io/quotes?page=1`);
+            const data = await response.json();
+            let i = Math.floor(Math.random()*data.results.length);
+            // console.log(data.results[i]);  generate random index and get the ator and his quote
+            setQuote(data.results[i]);
+            
+        }
+        catch(error){
+            console.log(error,'the error occured.......');
+        }   
+
     }
     useEffect(()=>{
         quoteGet();
@@ -27,21 +29,22 @@ const ManinContent = () => {
         <>  
             
                 <Box sx={{
-                    height: '91vh',
+                    height: '100vh',
                     display:'flex',
                     flexDirection:'column',
                     alignItems:'center',
                     justifyContent:'center',
                     padding:'20px',
                 }}>
+                    
                     <img className="img" alt="there is no src" src={logo} />
                     {quote?<Box sx={{
                         display:'flex',
                         flexDirection:'column',
                         alignItems:'center'
                     }}>
-                        <Typography align='center' mt={3} variant='p' >`{quote.quoteText}`</Typography>
-                        <Typography align='center' mt={1} variant='pone' >{quote.quoteAuthor}</Typography>
+                        <Typography align='center' mt={3} variant='p' >`{quote.content}`</Typography>
+                        <Typography align='center' mt={1} variant='pone' >{quote.author}</Typography>
                         <Button variant='contained' sx={{
                             textTransform:'none',
                             mt:1,

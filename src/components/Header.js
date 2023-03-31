@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook';
+import logo from '../assets/logo.png'
 
 import {NavLink} from 'react-router-dom';
 
@@ -14,7 +15,7 @@ import {NavLink} from 'react-router-dom';
 const Header = ()=>{
   return (
     <>
-      <AppBar position="static" sx={{padding:2}}>
+      <AppBar position="fixed" sx={{padding:2}}>
         {/* sx={{
         backgroundImage: 'linear-gradient(to top, #08131e , #0b1b2a)',
         color: '#fff',
@@ -30,7 +31,8 @@ const Header = ()=>{
             <Typography sx={{
               fontSize:20,
               fontWeight:'bold'
-            }}>Quotes.io</Typography>
+            }}>QuoteLoad</Typography>
+            <img alt='header-logo' className='img-logo' src={logo} />
           </Grid>
           <Grid item lg={8} sx={{
             display:'flex',
@@ -43,10 +45,10 @@ const Header = ()=>{
               <Typography component={NavLink} to='*' className='link'>On this day</Typography>
               <Typography component={NavLink} to='/' className='link'>Start page</Typography>
               <Typography component={NavLink} to='/about' className='link'>About</Typography> */}
-              <NavLink to='*' className={({isActive})=>isActive ? 'link-active':'link'}>API</NavLink>
-              <NavLink to='*' className={({isActive})=>isActive ? 'link-active':'link'}>On this day</NavLink>
-              <NavLink to='/' className={({isActive})=>isActive ? 'link-active':'link'}>Start page</NavLink>
+              <NavLink to='/' className={({isActive})=>isActive ? 'link-active':'link'}>Home</NavLink>
               <NavLink to='/about' className={({isActive})=>isActive ? 'link-active':'link'}>About</NavLink>
+              <NavLink to='*' className={({isActive})=>isActive ? 'link-active':'link'}>On this day</NavLink>
+              <NavLink to='*' className={({isActive})=>isActive ? 'link-active':'link'}>API</NavLink>
           </Grid>
           <Grid item lg={2} sx={{
             display:'flex',
