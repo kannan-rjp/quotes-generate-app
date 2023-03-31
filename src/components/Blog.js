@@ -32,7 +32,7 @@ const About = ()=> {
    
     <Grid container sx={{padding:2}} spacing={1}>
         <Grid item sm={12} lg={12}>
-            <Paper elevation={3}>
+            <Paper elevation={3} sx={{backgroundColor:'primary.light'}}>
                <Box sx={{
                   display:'flex',
                   flexDirection:'column',
@@ -48,7 +48,7 @@ const About = ()=> {
         
          {quoteCollection.map((ele,keyId) => (
          <Grid key={keyId} item sm={12} lg={4}>
-            <Paper>
+            <Paper sx={{backgroundColor:'primary.light'}}>
                <Box sx={{
                   display:'flex',
                   flexDirection:'column',

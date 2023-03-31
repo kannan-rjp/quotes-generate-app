@@ -11,8 +11,9 @@ import Error from './components/Error';
 const theme = createTheme({
   palette: {
       primary:{
-          main: '#2e4555',
-          contrastText: '#fff' //white
+          main: indigo[800],
+          light: indigo[50],
+          contrastText: '#fff', //white
       },
       secondary:{
         main: red[400],
@@ -64,7 +65,8 @@ const theme = createTheme({
               }
           }
         ]
-    }
+    },
+    
   }
 })
 function App() {
