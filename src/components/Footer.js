@@ -8,15 +8,18 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 const Footer = ()=> {
     return(
         <AppBar position="static">
-            <Box sx={{padding:'40px'}}>
+            <Box position='fixed' sx={{
+                bottom:0,
+                backgroundColor:'primary.main',
+                width:'100%',
+                padding:'10px'}}>
                 <Grid container>
-                  
                         <Grid item sm={12} lg={12} sx={{
                             display:'flex',
                             flexDirection:'column',
                             alignItems:'center'
                         }}>
-                            <Box mt={'1rem'}>
+                            {/* <Box mt={'1rem'}>
                                 <Typography sx={{
                                     fontSize:20,
                                     fontWeight:'bold'
@@ -29,8 +32,8 @@ const Footer = ()=> {
                                 <Link underline='none' sx={{color:'white'}}>Keywords</Link>{' . '}
                                 <Link underline='none' sx={{color:'white'}}>Blog</Link>{' . '}
                                 <Link underline='none' sx={{color:'white'}}>Start page</Link>
-                            </Box>
-                            <Box mt={'1rem'}>
+                            </Box> */}
+                            <Box>
                                 <Typography color={'#8b8c8d'}>©2023 QuoteLoad | All rights reserved.</Typography>
                             </Box>
                         </Grid>
