@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/quotes-generate-app/static/css/main.7729a0d5.css",
+    "main.js": "/quotes-generate-app/static/js/main.8e696863.js",
+    "static/js/787.a6dc785d.chunk.js": "/quotes-generate-app/static/js/787.a6dc785d.chunk.js",
+    "static/media/logo.png": "/quotes-generate-app/static/media/logo.64e0c09810543d3c50cf.png",
+    "static/media/zen-quotes-logo.png": "/quotes-generate-app/static/media/zen-quotes-logo.be6df01b35f5f9e6809c.png",
+    "index.html": "/quotes-generate-app/index.html",
+    "main.7729a0d5.css.map": "/quotes-generate-app/static/css/main.7729a0d5.css.map",
+    "main.8e696863.js.map": "/quotes-generate-app/static/js/main.8e696863.js.map",
+    "787.a6dc785d.chunk.js.map": "/quotes-generate-app/static/js/787.a6dc785d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7729a0d5.css",
+    "static/js/main.8e696863.js"
+  ]
+}
