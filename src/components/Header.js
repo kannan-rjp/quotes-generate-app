@@ -45,7 +45,7 @@ const Header = ()=>{
               <Typography component={NavLink} to='*' className='link'>On this day</Typography>
               <Typography component={NavLink} to='/' className='link'>Start page</Typography>
               <Typography component={NavLink} to='/about' className='link'>About</Typography> */}
-              <NavLink to='/' className={({isActive})=>isActive ? 'link-active':'link'}>Home</NavLink>
+              <NavLink to='/' className={({isActive})=>isActive ? 'link-active':'link'}>Kannan</NavLink>
               <NavLink to='/about' className={({isActive})=>isActive ? 'link-active':'link'}>About</NavLink>
               <NavLink to='*' className={({isActive})=>isActive ? 'link-active':'link'}>On this day</NavLink>
               <NavLink to='*' className={({isActive})=>isActive ? 'link-active':'link'}>API</NavLink>
