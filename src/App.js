@@ -4,71 +4,11 @@ import './App.css';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import ManinContent from './components/MainContent';
-import { indigo,deepPurple, red } from '@mui/material/colors';
 import { createTheme,ThemeProvider } from "@mui/material";
+import theme from './config/config';
 import Blog from './components/Blog';
 import Error from './components/Error';
-const theme = createTheme({
-  palette: {
-      primary:{
-          main: red[600],
-          light: indigo[50],
-          contrastText: '#fff', //white
-      },
-      secondary:{
-        main: red[400],
-        contrastText: '#fff'
-      }
-  },
-  overrides: {
-    MuiButton: {
-      raisedPrimary: {
-        color: red[200],
-      },
-    },
-  },
-  components:{
-    MuiTypography:{
-        variants:[
-            {
-                props:  {
-                    variant: 'footer-p'
-                },
-                style:{
-                    fontSize:70,
-                    color:'red',
-                    textShadow: '2px 2px black'
-                },   
-            },
-            {
-              props:  {
-                  variant: 'p'
-              },
-              style:{
-                  fontSize:30,
-              }
-            },
-            {
-                props:  {
-                    variant: 'pone'
-                },
-                style:{
-                    fontSize:20,
-                }
-            },
-            {
-              props:  {
-                  variant: 'link-p'
-              },
-              style:{
-                   textDecoration: 'none',
-              }
-          }
-        ]
-    },
-    
-  }
-})
+
 function App() {
   return (
     // <BrowserRouter>
