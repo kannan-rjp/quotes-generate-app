@@ -1,24 +1,27 @@
-import { Typography,Box,Button } from "@mui/material";
-const Error = ()=> {
-    return(
-        <Box sx={{
-            height: '100vh',
-            display:'flex',
-            flexDirection:'column',
-            alignItems:'center',
-            justifyContent:'center',
-            padding:'20px',
-        }}>
+import { Typography, Box, Button } from "@mui/material";
+import Layout from "../layout/Layout";
+const Error = () => {
+    return (
+        <Layout>
             <Box sx={{
-                display:'flex',
-                flexDirection:'column',
-                alignItems:'center'
+                height: '100vh',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: '20px',
             }}>
-                <Typography align='center' mt={3} variant='p' >404</Typography>
-                <Typography align='center' mt={1} variant='pone' >Page Not FOund</Typography>
-                
+                <Box sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center'
+                }}>
+                    <Typography align='center' mt={3} variant='p' >404</Typography>
+                    <Typography align='center' mt={1} variant='pone' >Page Not FOund</Typography>
+
+                </Box>
             </Box>
-        </Box>
+        </Layout>
     );
 }
 export default Error;

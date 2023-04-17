@@ -8,6 +8,7 @@ import { createTheme,ThemeProvider } from "@mui/material";
 import theme from './config/config';
 import Blog from './components/Blog';
 import Error from './components/Error';
+import Home from './components/Home';
 
 function App() {
   return (
@@ -21,13 +22,11 @@ function App() {
     
       <ThemeProvider theme={theme}>
         <BrowserRouter>
-          <Header />
           <Routes>
-            <Route path='/' element={<ManinContent />} />
+            <Route path='/' element={<Home />} />
             <Route path='about' element={<Blog />} />
             <Route path='*' element={<Error />} />
           </Routes>
-          <Footer />
         </BrowserRouter>
       </ThemeProvider>
     
