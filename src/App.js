@@ -1,14 +1,17 @@
-import { BrowserRouter, Routes, Router, Route } from 'react-router-dom'; 
+import { BrowserRouter, Routes, Router, Route } from 'react-router-dom';
 import './App.css';
 
 import Footer from './components/Footer';
 import Header from './components/Header';
 import ManinContent from './components/MainContent';
-import { createTheme,ThemeProvider } from "@mui/material";
+import { createTheme, ThemeProvider } from "@mui/material";
+import { AuthProvider } from './service/AuthProvider';
+import ProtectedRoute from './components/ProtectedRoute';
 import theme from './config/config';
 import Blog from './components/Blog';
 import Error from './components/Error';
 import Home from './components/Home';
+import Login from './components/Login';
 
 function App() {
   return (
@@ -19,17 +22,29 @@ function App() {
     //     <Route path='footer' element={<Footer />} />
     //   </Routes>
     // </BrowserRouter>
-    
-      <ThemeProvider theme={theme}>
+
+    <ThemeProvider theme={theme}>
+      <AuthProvider
+        authType='cookie'
+        authName='_auth'
+        cookieDomain={window.location.hostname}
+        cookieSecure={false}
+      >
         <BrowserRouter>
           <Routes>
-            <Route path='/' element={<Home />} />
+            <Route path='/' element={<Login />} />
+            <Route path='/home' element={
+              <ProtectedRoute>
+                <Home />
+              </ProtectedRoute>
+            } />
             <Route path='about' element={<Blog />} />
             <Route path='*' element={<Error />} />
           </Routes>
         </BrowserRouter>
-      </ThemeProvider>
-    
+      </AuthProvider>
+    </ThemeProvider>
+
   );
 }
 export default App;
