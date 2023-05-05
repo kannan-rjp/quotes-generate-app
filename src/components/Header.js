@@ -4,15 +4,19 @@ import Grid from '@mui/material/Grid'
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import FacebookIcon from '@mui/icons-material/Facebook';
 import logo from '../assets/logo.png'
 
-import {NavLink} from 'react-router-dom';
+import {NavLink, useNavigate} from 'react-router-dom';
+import { useAuth } from '../service/AuthProvider';
 
 
 const Header = ()=>{
+  const navigate = useNavigate();
+  const auth = useAuth();
+  function handleLogout(){
+    auth.logout();
+    navigate('/');
+  }
   return (
     <>
       <AppBar position="fixed" sx={{padding:2}}>
@@ -45,7 +49,7 @@ const Header = ()=>{
               <Typography component={NavLink} to='*' className='link'>On this day</Typography>
               <Typography component={NavLink} to='/' className='link'>Start page</Typography>
               <Typography component={NavLink} to='/about' className='link'>About</Typography> */}
-              <NavLink to='/' className={({isActive})=>isActive ? 'link-active':'link'}>Home</NavLink>
+              <NavLink to='/home' className={({isActive})=>isActive ? 'link-active':'link'}>Home</NavLink>
               <NavLink to='/about' className={({isActive})=>isActive ? 'link-active':'link'}>About</NavLink>
               <NavLink to='*' className={({isActive})=>isActive ? 'link-active':'link'}>On this day</NavLink>
               <NavLink to='*' className={({isActive})=>isActive ? 'link-active':'link'}>API</NavLink>
@@ -55,8 +59,7 @@ const Header = ()=>{
             alignItems:'center',
             justifyContent:'flex-end'
           }}>
-            <TwitterIcon />
-            <FacebookIcon sx={{ml:2}} />
+            {auth.user && <Button variant='contained' color='success' onClick={handleLogout}>Logout</Button>}
           </Grid>
         </Grid>
       </AppBar>

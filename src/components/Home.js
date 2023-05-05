@@ -28,7 +28,7 @@ const Home = () => {
     
     return (
         <>  
-            <Layout>
+            
                 <Box sx={{
                     height: '100vh',
                     display:'flex',
@@ -57,7 +57,7 @@ const Home = () => {
                     }} />
                     </Box>}
                 </Box>
-            </Layout>
+            
             
         </>
     );

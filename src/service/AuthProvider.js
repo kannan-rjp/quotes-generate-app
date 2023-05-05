@@ -4,19 +4,19 @@ import { useLocalStorage } from "./Hooks/useLocalStorage";
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-    
-    const [user, setUser] = useLocalStorage('user',null)
-    
-    console.log(user,'i get conotexxt')
+
+    const [user, setUser] = useLocalStorage('user', null)
+
+    console.log(user, 'i get conotexxt')
     async function handleToken(props) {
         try {
             const data = await authService.getLogged(props);
-            if(data.status){
-                localStorage.setItem('user',props.email);
-                localStorage.setItem('token',data.data.token);
+            if (data.status) {
+                localStorage.setItem('user', props.email);
+                localStorage.setItem('token', data.data.token);
             }
         }
-        catch(e) {
+        catch (e) {
 
         }
     }
@@ -26,7 +26,10 @@ export const AuthProvider = ({ children }) => {
     }
 
     const logout = () => {
-        setUser(null)
+        localStorage.removeItem('user');
+        localStorage.removeItem('token');
+        console.log('logout clicked');
+        setUser('')
     }
 
     return (

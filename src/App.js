@@ -8,10 +8,7 @@ import { createTheme, ThemeProvider } from "@mui/material";
 import { AuthProvider } from './service/AuthProvider';
 import ProtectedRoute from './components/ProtectedRoute';
 import theme from './config/config';
-import Blog from './components/Blog';
-import Error from './components/Error';
-import Home from './components/Home';
-import Login from './components/Login';
+import AppRoutes from './AppRoutes';
 
 function App() {
   return (
@@ -31,16 +28,7 @@ function App() {
         // cookieSecure={false}
       >
         <BrowserRouter>
-          <Routes>
-            <Route path='/' element={<Login />} />
-            <Route path='/home' element={
-              <ProtectedRoute>
-                <Home />
-              </ProtectedRoute>
-            } />
-            <Route path='about' element={<Blog />} />
-            <Route path='*' element={<Error />} />
-          </Routes>
+          <AppRoutes />
         </BrowserRouter>
       </AuthProvider>
     </ThemeProvider>
