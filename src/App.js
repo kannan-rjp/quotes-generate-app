@@ -25,10 +25,10 @@ function App() {
 
     <ThemeProvider theme={theme}>
       <AuthProvider
-        authType='cookie'
-        authName='_auth'
-        cookieDomain={window.location.hostname}
-        cookieSecure={false}
+        // authType='cookie'
+        // authName='_auth'
+        // cookieDomain={window.location.hostname}
+        // cookieSecure={false}
       >
         <BrowserRouter>
           <Routes>
