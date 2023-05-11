@@ -6,19 +6,21 @@ import Error from './components/Error';
 import Home from './components/Home';
 import Login from './components/Login';
 import ProtectedRoute from "./components/ProtectedRoute";
+import Dynamic from './components/Dynamic'
 
 
 const AppRoutes = ({ children }) => {
     return (
         <Routes>
+            <Route path='/' element={<Login />} />
             <Route path="/" element={<Layout />}>
-                <Route path='/' element={<Login />} />
                 <Route path='/home' element={
                     <ProtectedRoute>
                         <Home />
                     </ProtectedRoute>
                 } />
                 <Route path='about' element={<Blog />} />
+                <Route path='dynamic' element={<Dynamic />} />
                 <Route path='*' element={<Error />} />
             </Route>
 

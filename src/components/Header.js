@@ -51,7 +51,7 @@ const Header = ()=>{
               <Typography component={NavLink} to='/about' className='link'>About</Typography> */}
               <NavLink to='/home' className={({isActive})=>isActive ? 'link-active':'link'}>Home</NavLink>
               <NavLink to='/about' className={({isActive})=>isActive ? 'link-active':'link'}>About</NavLink>
-              <NavLink to='*' className={({isActive})=>isActive ? 'link-active':'link'}>On this day</NavLink>
+              <NavLink to='/dynamic' className={({isActive})=>isActive ? 'link-active':'link'}>On this day</NavLink>
               <NavLink to='*' className={({isActive})=>isActive ? 'link-active':'link'}>API</NavLink>
           </Grid>
           <Grid item lg={2} sx={{
