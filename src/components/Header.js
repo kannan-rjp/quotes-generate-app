@@ -52,6 +52,7 @@ const Header = ()=>{
               <NavLink to='/home' className={({isActive})=>isActive ? 'link-active':'link'}>Home</NavLink>
               <NavLink to='/about' className={({isActive})=>isActive ? 'link-active':'link'}>About</NavLink>
               <NavLink to='/dynamic' className={({isActive})=>isActive ? 'link-active':'link'}>On this day</NavLink>
+              <NavLink to='/material' className={({isActive})=>isActive ? 'link-active':'link'}>Material</NavLink>
               <NavLink to='*' className={({isActive})=>isActive ? 'link-active':'link'}>API</NavLink>
           </Grid>
           <Grid item lg={2} sx={{

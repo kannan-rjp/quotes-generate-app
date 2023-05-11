@@ -6,7 +6,8 @@ import Error from './components/Error';
 import Home from './components/Home';
 import Login from './components/Login';
 import ProtectedRoute from "./components/ProtectedRoute";
-import Dynamic from './components/Dynamic'
+import Dynamic from './components/Dynamic';
+import Material from "./components/Material";
 
 
 const AppRoutes = ({ children }) => {
@@ -21,6 +22,7 @@ const AppRoutes = ({ children }) => {
                 } />
                 <Route path='about' element={<Blog />} />
                 <Route path='dynamic' element={<Dynamic />} />
+                <Route path='material' element={<Material />} />
                 <Route path='*' element={<Error />} />
             </Route>
 
