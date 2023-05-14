@@ -1,7 +1,8 @@
 import { Box } from '@mui/material';
 import React from 'react';
 import { useForm, useFieldArray, Controller, FormProvider, useFormContext } from 'react-hook-form';
-import ArrayListOne from './sample/ArrayListOne'
+import ArrayListOne from './sample/ArrayListOne';
+import ArrayListTwo from './sample/ArrayListTwo';
 
 
 const SampleUse = () => {
@@ -22,6 +23,7 @@ const SampleUse = () => {
             <FormProvider {...methods}>
                 <form onSubmit={methods.handleSubmit(onhandlesubmit)}>
                     <ArrayListOne />
+                    <ArrayListTwo />
                     <button type='submit'>Submit</button>
                 </form>
             </FormProvider>
