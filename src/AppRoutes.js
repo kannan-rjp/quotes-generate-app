@@ -8,6 +8,9 @@ import Login from './components/Login';
 import ProtectedRoute from "./components/ProtectedRoute";
 import Dynamic from './components/Dynamic';
 import Material from "./components/Material";
+import DynamicForm from "./components/DynamicForm";
+import SampleUse from "./components/SampleUse";
+
 
 
 const AppRoutes = ({ children }) => {
@@ -23,6 +26,8 @@ const AppRoutes = ({ children }) => {
                 <Route path='about' element={<Blog />} />
                 <Route path='dynamic' element={<Dynamic />} />
                 <Route path='material' element={<Material />} />
+                <Route path='dynamic-form' element={<DynamicForm />} />
+                <Route path='sample' element={<SampleUse />} />
                 <Route path='*' element={<Error />} />
             </Route>
 

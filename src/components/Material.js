@@ -24,7 +24,7 @@ const Material = () => {
 
     const { register, handleSubmit, control, formState: { errors } } = useForm();
     function onDataSubmit(data) {
-        console.log(data)
+        console.log(data,'the data')
     }
     return (
         <Box sx={{
@@ -84,10 +84,10 @@ const Material = () => {
                     rules={{ required: 'Select the role' }}
                     render={({ field }) => (
                         <FormControl error={!!errors.selectrole} {...field}>
-                            <Select value={selectedRole} onChange={handleRole}>
+                            <Select onChange={handleRole} {...field}>
                                 {rolebase.map((item, index) => {
                                     return (
-                                        <MenuItem value={item.id}>{item.name}</MenuItem>
+                                        <MenuItem value={item.name}>{item.name}</MenuItem>
                                     )
                                 })}
                             </Select>
